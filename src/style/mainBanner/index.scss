@@ -1,0 +1,52 @@
+.main-banner {
+    padding-top: 100px;
+
+    .main-banner-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        .main-banner-container-subtitle {
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1.875rem;
+
+                li {
+                    display: flex;
+                    align-items: start;
+                    gap: .625rem;
+
+                    .text-larg {
+                        line-height: 25.2px;
+                        color: rgba(67, 66, 66, 1);
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .banner-container-img {
+        margin-top: 3.125rem;
+        background-image: url("/images/banner.png");
+        padding: 30px 48px;
+        aspect-ratio: 1320/400;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+
+        .big-btn {
+            max-width: 307px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+        }
+    }
+}

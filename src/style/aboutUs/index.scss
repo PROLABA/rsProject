@@ -1,0 +1,80 @@
+.about-us {
+    padding-top: 12.5rem;
+
+    .about-us-title {
+        display: flex;
+        align-items: center;
+        gap: 1.875rem;
+
+        .line-title {
+            width: 83px;
+            height: 1px;
+            background-color: $blue;
+        }
+    }
+
+    .about-us-content {
+        padding-top: 3.125rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .h1.displayed {
+            color: $blue;
+            font-size: 2.8125rem;
+        }
+
+        .about-us-content-left {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+
+            .item-rigth-container {
+                max-width: 12.6875rem;
+                display: flex;
+                flex-direction: column;
+                gap: .625rem;
+            }
+
+            .item-center {
+                display: flex;
+                justify-content: center;
+            }
+
+            .item-center-container {
+                max-width: 21.8125rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: .625rem;
+            }
+
+            .item-left {
+                display: flex;
+                justify-content: end;
+            }
+
+            .item-left-container {
+                max-width: 311px;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                gap: .625rem;
+            }
+        }
+
+        .about-us-content-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .about-us-content-right-title {
+                max-width: 493px;
+            }
+
+            .about-us-content-right-text-bordered {
+                background-image: url('/images/frame.png');
+            }
+        }
+    }
+}

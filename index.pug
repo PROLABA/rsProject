@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1')
+        link(rel='stylesheet' href='src/style/main.scss')
+        linl(rel='stylesheet' href="https://unpkg.com/aos@2.3.1/dist/aos.css")
+    body.main-wrapper
+        include ./src/components/header/header.pug
+        .container 
+            .rigth-line-big
+            .center-line-big
+            .left-line-big
+        main.flex-grow
+            include ./src/components/mainBanner/index.pug
+            include ./src/components/aboutUs/index.pug
+
+
+        footer.footer
+            include ./src/components/footer/index.pug
+        script(type='module' src='/main.js')
