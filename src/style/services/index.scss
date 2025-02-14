@@ -1,0 +1,48 @@
+.services {
+    padding-top: 200px;
+
+    .services-title {
+        display: flex;
+        align-items: center;
+        gap: 1.875rem;
+
+        .line-title {
+            width: 83px;
+            height: 1px;
+            background-color: $blue;
+        }
+    }
+
+    .services-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 50px;
+
+        .text-title {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 54px;
+            margin-right: 30px;
+        }
+
+        .right {
+            position: relative;
+            margin-top: -32px;
+            z-index: 2;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            position: relative;
+            z-index: 2;
+        }
+    }
+}

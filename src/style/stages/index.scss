@@ -1,0 +1,48 @@
+.stages {
+    padding-top: 206px;
+
+    .stages-title {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .line-title {
+            width: 83px;
+            height: 1px;
+            background-color: $blue;
+        }
+    }
+
+    .stage-content {
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 3.125rem;
+    }
+
+    .item {
+        position: relative;
+        z-index: 2;
+        border: 1px solid rgba(7, 102, 154, 1);
+        min-height: 200px;
+        padding: 25px 137px 57px 137px;
+        background-color: white;
+        display: flex;
+        gap: 91px;
+        align-items: center;
+
+        .big-title {
+            font-weight: 700;
+            font-size: 130px;
+            line-height: 158.69px;
+            letter-spacing: 0%;
+            color: $lightBlue;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+}

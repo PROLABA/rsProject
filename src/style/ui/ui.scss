@@ -198,9 +198,10 @@
 
 .center-line-big {
     width: 1px;
-    height: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
     background-color: $lightGray;
-    position: absolute;
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
     z-index: 0;
@@ -208,9 +209,35 @@
 
 .left-line-big {
     width: 1px;
-    height: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
     background-color: $lightGray;
     position: absolute;
     left: 0;
     z-index: 1;
+}
+
+.faq {
+    padding: 20px;
+    border: 1px solid $blue;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+
+    .faq-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .h5 {
+            color: $blue;
+        }
+
+        svg {
+            transition: all 0.3s ease-in-out;
+        }
+    }
 }
