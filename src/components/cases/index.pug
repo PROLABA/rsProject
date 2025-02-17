@@ -1,0 +1,77 @@
+- 
+    var tabs = [ 
+        {name:"Торговые центры, комплексы", class:"active", filter:"center"},
+        {name:"Жилые здания, районы", filter:"residential-buildings-districts"},
+        {name:"Склады", filter:"warehouses"},
+        {name:"Гостиницы",  filter:"hotel"},
+        {name:"Производственные здания",    filter:"production-buildings"},
+        {name:"Офисные, бизнес-центры",   filter:"office-business-centers"},
+        {name:"Котельные",  filter:"boiler-rooms"},
+        {name:"Элеваторы",  filter:"elevators"},
+        {name:"Медицинские учреждения",  filter:"medical-institutions"},
+        {name:"Детские сады",  filter:"kindergartens"},
+        {name:"Автозаправки",  filter:"gas-stations"},
+    ]
+    var slides = [
+        {filter: "office-business-centers", img: "/public/images/sliderimg.png", name: "Офисное здание", city: "г. Сочи", squre: "Площадь: 100 м2"},
+        {filter: "center", img: "/public/images/sliderimg.png", name: "ТРЦ Меридиан", city: "г. Краснодар", squre: "Площадь: 15000 м2"},
+        {filter: "center", img: "/public/images/sliderimg.png", name: "ТЦ Галактика", city: "г. Москва", squre: "Площадь: 25000 м2"},
+        {filter: "center", img: "/public/images/sliderimg.png", name: "ТРЦ Меридиан", city: "г. Краснодар", squre: "Площадь: 15000 м2"},
+        {filter: "center", img: "/public/images/sliderimg.png", name: "ТЦ Галактика", city: "г. Москва", squre: "Площадь: 25000 м2"},
+        {filter: "center", img: "/public/images/sliderimg.png", name: "ТРЦ Меридиан", city: "г. Краснодар", squre: "Площадь: 15000 м2"},
+        {filter: "center", img: "/public/images/sliderimg.png", name: "ТЦ Галактика", city: "г. Москва", squre: "Площадь: 25000 м2"},
+        {filter: "residential-buildings-districts", img: "/public/images/sliderimg.png", name: "ЖК Солнечный", city: "г. Казань", squre: "Площадь: 50000 м2"},
+        {filter: "residential-buildings-districts", img: "/public/images/sliderimg.png", name: "ЖК Прибрежный", city: "г. Анапа", squre: "Площадь: 30000 м2"},
+        {filter: "warehouses", img: "/public/images/sliderimg.png", name: "Логистический центр Восток", city: "г. Екатеринбург", squre: "Площадь: 8000 м2"},
+        {filter: "hotel", img: "/public/images/sliderimg.png", name: "Гостиница Морская", city: "г. Владивосток", squre: "Площадь: 3500 м2"},
+        {filter: "production-buildings", img: "/public/images/sliderimg.png", name: "Завод Технопром", city: "г. Челябинск", squre: "Площадь: 12000 м2"},
+        {filter: "boiler-rooms", img: "/public/images/sliderimg.png", name: "Котельная №5", city: "г. Новосибирск", squre: "Площадь: 400 м2"},
+        {filter: "elevators", img: "/public/images/sliderimg.png", name: "Элеватор Зерно", city: "г. Ростов", squre: "Площадь: 2000 м2"},
+        {filter: "medical-institutions", img: "/public/images/sliderimg.png", name: "Клиника Здоровье", city: "г. Самара", squre: "Площадь: 5000 м2"},
+        {filter: "kindergartens", img: "/public/images/sliderimg.png", name: "Детский сад Радуга", city: "г. Тюмень", squre: "Площадь: 1200 м2"},
+        {filter: "gas-stations", img: "/public/images/sliderimg.png", name: "АЗС Нефть", city: "г. Уфа", squre: "Площадь: 350 м2"},
+        {filter: "center", img: "/public/images/sliderimg.png", name: "ТРЦ Европа", city: "г. Воронеж", squre: "Площадь: 18000 м2"},
+        {filter: "residential-buildings-districts", img: "/public/images/sliderimg.png", name: "ЖК Парковый", city: "г. Пермь", squre: "Площадь: 45000 м2"},
+        {filter: "warehouses", img: "/public/images/sliderimg.png", name: "Склад Логистик", city: "г. Омск", squre: "Площадь: 6000 м2"},
+        {filter: "hotel", img: "/public/images/sliderimg.png", name: "Отель Премиум", city: "г. Калининград", squre: "Площадь: 4200 м2"},
+        {filter: "production-buildings", img: "/public/images/sliderimg.png", name: "Фабрика Стандарт", city: "г. Тверь", squre: "Площадь: 15000 м2"},
+        {filter: "boiler-rooms", img: "/public/images/sliderimg.png", name: "Котельная Центральная", city: "г. Иркутск", squre: "Площадь: 600 м2"},
+        {filter: "elevators", img: "/public/images/sliderimg.png", name: "Элеватор Агро", city: "г. Краснодар", squre: "Площадь: 2500 м2"},
+        {filter: "medical-institutions", img: "/public/images/sliderimg.png", name: "Медцентр Vita", city: "г. Томск", squre: "Площадь: 3800 м2"},
+        {filter: "kindergartens", img: "/public/images/sliderimg.png", name: "Детский сад Сказка", city: "г. Хабаровск", squre: "Площадь: 1500 м2"},
+        {filter: "gas-stations", img: "/public/images/sliderimg.png", name: "АЗС Топливо", city: "г. Волгоград", squre: "Площадь: 280 м2"}
+    ]
+.container.line-container
+    .rigth-line-big
+    .center-line-big
+    .left-line-big
+section.cases
+    .cases-container 
+        .container 
+            .cases-title 
+                .line 
+                .h4 Кейсы
+            .cases-tabs 
+                each tab in tabs
+                    button(data-filter=tab.filter).tabs(class=tab.class || "")
+                        .h5=    tab.name
+
+            .cases-slider 
+                .swiper
+                    .swiper-wrapper
+                        each slide in slides
+                            .swiper-slide(data-filter=slide.filter) 
+                                .swiper-slide-img
+                                    img(src=`${slide.img}` alt="" srcset="")
+                                .swiper-slide-text 
+                                    .top-text  
+                                        .h5= slide.name
+                                        .text-larg= slide.city
+                                    .bottom-text
+                                        .text-small= slide.squre
+                .swiper-button-prev
+                    include ./prevIcon.svg
+                .swiper-button-next
+                    include ./nextIcon.svg
+
+

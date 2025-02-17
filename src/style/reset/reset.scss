@@ -68,6 +68,7 @@
 
     .flex-grow {
         flex: 1 0 auto;
+        overflow: hidden;
         height: 100%;
     }
 

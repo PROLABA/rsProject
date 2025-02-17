@@ -196,6 +196,15 @@
     right: 0;
 }
 
+.left-line-big {
+    width: 1px;
+    height: 100vw;
+    background-color: $lightGray;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
 .center-line-big {
     width: 1px;
     height: 100dvh;
@@ -207,15 +216,7 @@
     z-index: 0;
 }
 
-.left-line-big {
-    width: 1px;
-    height: 100dvh;
-    max-height: 100dvh;
-    background-color: $lightGray;
-    position: absolute;
-    left: 0;
-    z-index: 1;
-}
+
 
 .faq {
     padding: 20px;
@@ -239,5 +240,46 @@
         svg {
             transition: all 0.3s ease-in-out;
         }
+    }
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    border: 1px solid $blue;
+    padding: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    max-height: 2.9375rem;
+
+    &.active {
+        background-color: $blue;
+
+        .h5 {
+            color: $white;
+        }
+    }
+
+    &:hover {
+        background-color: $blue;
+
+        .h5 {
+            color: $white;
+        }
+    }
+
+    .h5 {
+        color: $blue;
+        transition: color 0.3s ease-in-out;
+        font-weight: 700;
+        font-size: 0.875rem;
+        line-height: 1.0681rem;
+        letter-spacing: 0%;
     }
 }

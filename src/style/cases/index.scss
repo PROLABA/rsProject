@@ -1,0 +1,84 @@
+.cases {
+    margin-top: 200px;
+
+    .cases-title {
+        display: flex;
+        align-items: center;
+        gap: 1.875rem;
+
+        .line {
+            width: 83px;
+            height: 1px;
+            background-color: $blue;
+        }
+    }
+
+    .cases-tabs {
+        padding-top: 3.125rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.9375rem 1.875rem;
+    }
+
+    .cases-slider {
+        padding-top: 1.875rem;
+        position: relative;
+
+        .swiper-slide-img {
+            img {
+                aspect-ratio: 420/400;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .swiper-slide-text {
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .top-text {
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+                align-items: center;
+
+                .h5 {
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 21.97px;
+                    letter-spacing: 0%;
+                    color: $black;
+                }
+            }
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            top: var(--swiper-navigation-top-offset, 43%);
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0px 8px 15px 0px rgba(67, 66, 66, 0.1);
+            min-width: 60px;
+            min-height: 60px;
+            padding: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &::after {
+                content: "";
+            }
+        }
+
+        .swiper-button-next {
+            right: var(--swiper-navigation-sides-offset, -18px);
+        }
+
+        .swiper-button-prev {
+            left: var(--swiper-navigation-sides-offset, -18px);
+        }
+    }
+}

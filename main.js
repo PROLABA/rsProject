@@ -1,6 +1,11 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import anime from "animejs/lib/anime.es.js";
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
@@ -44,4 +49,62 @@ document.querySelectorAll(".faq").forEach((faq) => {
       });
     }
   });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".cases-tabs .tabs");
+  const swiperWrapper = document.querySelector(".swiper-wrapper");
+  const swiperSlides = document.querySelectorAll(".swiper-slide");
+  const swiper = new Swiper(".swiper", {
+    modules: [Navigation],
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+  });
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      // Убираем активный класс у всех табов
+      tabs.forEach((t) => t.classList.remove("active"));
+      // Добавляем активный класс к выбранному табу
+      this.classList.add("active");
+
+      // Получаем значение фильтра
+      const filter = this.getAttribute("data-filter");
+
+      // Скрываем все слайды
+      swiperSlides.forEach((slide) => {
+        slide.style.display = "none";
+      });
+
+      // Показываем только те слайды, которые соответствуют фильтру
+      const filteredSlides = Array.from(swiperSlides).filter(
+        (slide) => slide.getAttribute("data-filter") === filter
+      );
+      filteredSlides.forEach((slide) => {
+        slide.style.display = "block";
+      });
+
+      // Обновляем Swiper
+      swiper.update();
+    });
+  });
+
+  // Инициализация: показываем слайды для активного таба по умолчанию
+  const activeTab = document.querySelector(".cases-tabs .tabs.active");
+  if (activeTab) {
+    const filter = activeTab.getAttribute("data-filter");
+    swiperSlides.forEach((slide) => {
+      if (slide.getAttribute("data-filter") === filter) {
+        slide.style.display = "block";
+      } else {
+        slide.style.display = "none";
+      }
+    });
+    swiper.update();
+  }
 });
