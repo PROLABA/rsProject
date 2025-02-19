@@ -6,6 +6,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import IMask from "imask";
 
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
@@ -13,6 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
       startEvent: "DOMContentLoaded",
     });
   }, 500);
+
+  document.querySelectorAll("input.phone").forEach((element) => {
+    IMask(element, {
+      mask: "+{7} (000) 000-00-00",
+      placeholderChar: "_",
+    });
+  });
+  document.querySelectorAll("input").forEach((input) => {
+    input.addEventListener("change", () => {
+      if (input.value.length > 0) {
+        input.classList.add("filled");
+      } else {
+        input.classList.remove("filled");
+      }
+    });
+  });
 });
 
 document.querySelectorAll(".faq").forEach((faq) => {
