@@ -14,10 +14,24 @@
 
         }
 
+        .header-logo {
+            @media (max-width:1320px) {
+                svg {
+                    width: 132px;
+                    height: 36px;
+                }
+            }
+        }
+
         .header-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
             align-items: center;
+
+            @media (max-width:1320px) {
+                display: flex;
+                justify-content: space-between;
+            }
 
             .header-center-container {
                 display: flex;
@@ -25,14 +39,30 @@
                 justify-content: space-between;
                 gap: 31px;
 
+                @media (max-width:1320px) {
+                    gap: 18px;
+                }
+
                 ul {
                     display: flex;
                     align-items: center;
                     gap: 30px;
 
+                    @media (max-width:1320px) {
+                        gap: 1.25rem;
+                    }
+
                     a {
                         position: relative;
                         padding-bottom: 5px;
+
+                        @media (max-width:1320px) {
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 17.09px;
+                            letter-spacing: 0%;
+                            padding-bottom: 0;
+                        }
 
                         &::after {
                             content: '';
@@ -62,9 +92,30 @@
                 gap: 31px;
                 align-items: center;
 
+                @media (max-width:1320px) {
+                    gap: 17px;
+                }
+
                 .tel-link-text {
                     color: rgba(7, 102, 154, 1);
                 }
+
+                .button-light {
+
+                    @media (max-width:1320px) {
+                        display: none;
+                    }
+
+                    &.mobile-icon {
+                        display: none;
+
+                        @media (max-width:1320px) {
+                            display: flex;
+                            padding: 11px 11px 12px 12px;
+                        }
+                    }
+                }
+
             }
         }
     }

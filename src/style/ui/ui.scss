@@ -7,6 +7,13 @@
     &.displayed {
         font-family: "DISPLAYED";
     }
+
+    @media (max-width:1320px) {
+        font-weight: 700;
+        font-size: 37px;
+        line-height: 40.7px;
+        letter-spacing: 0%;
+    }
 }
 
 .h2 {
@@ -14,6 +21,13 @@
     font-size: 50px;
     line-height: 61.04px;
     letter-spacing: 0%;
+
+    @media (max-width:1320px) {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 33px;
+        letter-spacing: 0%;
+    }
 }
 
 .h3 {
@@ -21,6 +35,13 @@
     font-size: 35px;
     line-height: 42.72px;
     letter-spacing: 0%;
+
+    @media (max-width:1320px) {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29.3px;
+        letter-spacing: 0%;
+    }
 }
 
 .h4 {
@@ -28,6 +49,13 @@
     font-size: 24px;
     line-height: 29.3px;
     letter-spacing: 0%;
+
+    @media (max-width:1320px) {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21.97px;
+        letter-spacing: 0%;
+    }
 }
 
 .h5 {
@@ -35,6 +63,13 @@
     font-size: 24px;
     line-height: 29.3px;
     letter-spacing: 0%;
+
+    @media (max-width:1320px) {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17.09px;
+        letter-spacing: 0%;
+    }
 }
 
 .text-larg {

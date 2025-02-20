@@ -53,6 +53,10 @@
         margin: 0 auto;
         box-sizing: border-box;
         position: relative;
+
+        @media (max-width: 82.5rem) {
+            max-width: 740px;
+        }
     }
 
     html {

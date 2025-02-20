@@ -1,15 +1,27 @@
 .services {
     padding-top: 200px;
 
+    @media (max-width:1320px) {
+        padding-top: 150px;
+    }
+
     .services-title {
         display: flex;
         align-items: center;
         gap: 1.875rem;
 
+        @media (max-width:1320px) {
+            gap: 15px;
+        }
+
         .line-title {
             width: 83px;
             height: 1px;
             background-color: $blue;
+
+            @media (max-width:1320px) {
+                width: 34px;
+            }
         }
     }
 
@@ -18,10 +30,25 @@
         grid-template-columns: 1fr 1fr;
         padding-top: 50px;
 
+        @media (max-width:1320px) {
+            padding-top: 30px;
+        }
+
         .text-title {
             display: flex;
             flex-direction: column;
             gap: 10px;
+
+            @media (max-width:1320px) {
+                gap: 5px;
+
+                .text-larg {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 19.6px;
+                    letter-spacing: 0%;
+                }
+            }
         }
 
         .left {
@@ -29,12 +56,20 @@
             flex-direction: column;
             gap: 54px;
             margin-right: 30px;
+
+            @media (max-width:1320px) {
+                gap: 19px;
+            }
         }
 
         .right {
             position: relative;
             margin-top: -32px;
             z-index: 2;
+
+            @media (max-width:1320px) {
+                margin-top: 5px;
+            }
         }
 
         .faq-list {
@@ -43,6 +78,10 @@
             gap: 1.25rem;
             position: relative;
             z-index: 2;
+
+            @media (max-width:1320px) {
+                gap: 15px;
+            }
         }
     }
 }
