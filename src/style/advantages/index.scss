@@ -5,6 +5,10 @@
         padding-top: 150px;
     }
 
+    @media (max-width:740px) {
+        padding-top: 64px;
+    }
+
     .advantages-content {
         padding-top: 95px;
         display: grid;
@@ -14,11 +18,28 @@
             padding-top: 3.75rem;
         }
 
+        @media (max-width:740px) {
+            padding-top: 24px;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
         .right {
             padding-top: 158px;
             display: flex;
             flex-direction: column;
             gap: 100px;
+
+            @media (max-width:740px) {
+                padding-top: 0;
+            }
+
+            @media (max-width:740px) {
+                margin-right: 0px;
+                gap: 1rem;
+                flex-direction: column-reverse
+
+            }
         }
 
         .left {
@@ -29,6 +50,12 @@
 
             @media (max-width:1320px) {
                 gap: 60px;
+
+            }
+
+            @media (max-width:740px) {
+                margin-right: 0px;
+                gap: 1rem;
             }
         }
 
@@ -41,6 +68,10 @@
             @media (max-width:1320px) {
                 padding: 15px;
                 min-height: 200px;
+            }
+
+            @media (max-width:740px) {
+                padding: 1rem;
             }
 
             .text-larg {
@@ -71,6 +102,21 @@
                 @media (max-width:1320px) {
                     .h4 {
                         max-width: 239px;
+                    }
+                }
+
+                @media (max-width:740px) {
+                    gap: 6px;
+
+                    .text-larg {
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 16.8px;
+                        letter-spacing: 0%;
+
+                        br {
+                            display: none;
+                        }
                     }
                 }
             }

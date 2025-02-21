@@ -1,31 +1,49 @@
 .main-banner {
     padding-top: 218px;
+
     @media (max-width:1320px) {
         padding-top: 160px;
     }
+
     .main-banner-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
+
+        @media (max-width:740px) {
+            grid-template-columns: 1fr;
+            gap: 24px;
+
+            .main-banner-container-title {
+                font-weight: 700;
+                font-size: 30px;
+                line-height: 33px;
+                letter-spacing: 0%;
+            }
+        }
 
         .main-banner-container-subtitle {
             ul {
                 display: flex;
                 flex-direction: column;
                 gap: 1.875rem;
+
                 @media (max-width:1320px) {
                     gap: .9375rem;
                 }
+
                 li {
                     display: flex;
                     align-items: start;
                     gap: .625rem;
-                    svg{ 
+
+                    svg {
                         @media (max-width:1320px) {
                             width: 14px;
                             height: 14px;
                         }
                     }
+
                     .text-larg {
                         line-height: 25.2px;
                         color: rgba(67, 66, 66, 1);
@@ -57,12 +75,42 @@
         background-repeat: no-repeat;
         position: relative;
 
+        @media (max-width:740px) {
+            display: none;
+        }
+
         .big-btn {
             max-width: 307px;
             position: absolute;
             bottom: 0;
             right: 0;
             width: 100%;
+        }
+    }
+
+    .banner-container-img-mobile {
+        display: none;
+
+        @media (max-width:740px) {
+            display: block;
+            background-image: url("/images/banner-main-mob.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            aspect-ratio: 288/248;
+            position: relative;
+            margin-top: 24px;
+
+            .big-btn {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                padding: 20px;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 17.09px;
+                letter-spacing: 0%;
+            }
         }
     }
 }

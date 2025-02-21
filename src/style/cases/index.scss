@@ -5,6 +5,10 @@
         margin-top: 150px;
     }
 
+    @media (max-width:740px) {
+        margin-top: 64px;
+    }
+
     .cases-title {
         display: flex;
         align-items: center;
@@ -34,6 +38,18 @@
         @media (max-width:1320px) {
             padding-top: 30px;
             grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width:740px) {
+            display: none;
+        }
+    }
+
+    .cases-tabs-mobile {
+        display: none;
+
+        @media (max-width:740px) {
+            display: block;
         }
     }
 

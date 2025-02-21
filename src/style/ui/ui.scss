@@ -229,6 +229,14 @@
     background-color: $lightGray;
     position: absolute;
     right: 0;
+
+    &.hidden {
+        display: none;
+    }
+
+    @media (max-width:740px) {
+        right: 1rem;
+    }
 }
 
 .left-line-big {
@@ -238,6 +246,14 @@
     position: absolute;
     left: 0;
     z-index: 1;
+
+    &.hidden {
+        display: none;
+    }
+
+    @media (max-width:740px) {
+        left: 1rem;
+    }
 }
 
 .center-line-big {
@@ -262,6 +278,9 @@
     display: flex;
     flex-direction: column;
 
+    @media (max-width:740px) {
+        padding: 1rem;
+    }
 
     .faq-header {
         display: flex;
@@ -270,6 +289,15 @@
 
         .h5 {
             color: $blue;
+        }
+
+        .text-small {
+            @media (max-width:740px) {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 19.6px;
+                letter-spacing: 0%;
+            }
         }
 
         svg {
@@ -316,5 +344,22 @@
         font-size: 0.875rem;
         line-height: 1.0681rem;
         letter-spacing: 0%;
+    }
+}
+
+.cases-tabs-mobile {
+    position: relative;
+    padding: 15px;
+    cursor: pointer;
+    border: 1px solid $blue;
+    z-index: 2;
+
+    .body-tabs {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+        background-color: white;
+        align-items: start;
     }
 }

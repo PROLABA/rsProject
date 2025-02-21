@@ -5,15 +5,27 @@
         padding-top: 9.375rem;
     }
 
+    @media (max-width:740px) {
+        padding-top: 64px;
+    }
+
     .about-us-title {
         display: flex;
         align-items: center;
         gap: 1.875rem;
 
+        @media (max-width:740px) {
+            gap: 15px;
+        }
+
         .line-title {
             width: 83px;
             height: 1px;
             background-color: $blue;
+
+            @media (max-width:740px) {
+                width: 34px;
+            }
         }
     }
 
@@ -21,6 +33,12 @@
         padding-top: 3.125rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
+
+        @media (max-width:740px) {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding-top: 24px;
+        }
 
         .h1.displayed {
             color: $blue;
@@ -59,6 +77,9 @@
                 flex-direction: column;
                 gap: .625rem;
 
+                @media (max-width:740px) {
+                    gap: 8px;
+                }
             }
 
             .item-center {
@@ -70,6 +91,10 @@
                         max-width: 244px;
                     }
                 }
+
+                @media (max-width:740px) {
+                    justify-content: start;
+                }
             }
 
             .item-center-container {
@@ -78,6 +103,10 @@
                 flex-direction: column;
                 justify-content: center;
                 gap: .625rem;
+
+                @media (max-width:740px) {
+                    gap: 8px;
+                }
             }
 
             .item-left {
@@ -89,6 +118,10 @@
                         max-width: 132px;
                     }
                 }
+
+                @media (max-width:740px) {
+                    justify-content: start;
+                }
             }
 
             .item-left-container {
@@ -98,6 +131,10 @@
                 justify-content: end;
                 gap: .625rem;
                 margin-right: 30px;
+
+                @media (max-width:740px) {
+                    gap: 8px;
+                }
             }
         }
 

@@ -55,7 +55,14 @@ section.cases
                 each tab in tabs
                     button(data-filter=tab.filter).tabs(class=tab.class || "")
                         .h5=    tab.name
-
+            .cases-tabs-mobile
+                .header-tabs
+                    button(data-filter=tabs[0].filter)
+                        .h5= tabs[0].name
+                .body-tabs
+                    each tab in tabs
+                        button(data-filter=tab.filter)
+                            .h5= tab.name   
             .cases-slider 
                 .swiper
                     .swiper-wrapper

@@ -14,6 +14,10 @@
 
         }
 
+        @media (max-width:740px) {
+            display: none;
+        }
+
         .header-logo {
             @media (max-width:1320px) {
                 svg {
@@ -116,6 +120,164 @@
                     }
                 }
 
+            }
+        }
+    }
+
+    .header-container-mobile {
+        display: none;
+
+        @media (max-width:740px) {
+            display: block;
+            border: 1px solid $lightGray;
+
+            .header-content-mobile {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                align-items: center;
+                padding: 1rem 0;
+
+                .header-btn {
+                    display: flex;
+                    gap: 6px;
+                    flex-direction: column;
+                    padding: 7px 4px;
+                    cursor: pointer;
+
+                    span {
+                        width: 24px;
+                        height: 2px;
+                        background-color: $blue;
+                        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                    }
+
+                    &.active {
+                        span {
+                            &:nth-child(1) {
+                                transform: translate(0, 6px) rotate(45deg);
+                            }
+
+                            &:nth-child(2) {
+                                opacity: 0;
+                            }
+
+                            &:nth-child(3) {
+                                transform: translate(0, -10px) rotate(-45deg);
+                            }
+                        }
+                    }
+                }
+
+                .heaedr-logo {
+                    display: flex;
+                    justify-content: center;
+
+                    svg {
+                        min-width: 138px;
+                    }
+                }
+
+                .header-btn-mobile {
+                    display: flex;
+                    justify-content: end;
+
+                    .mobile-icon {
+                        padding: 14.25px;
+
+                        svg {
+                            width: 18.5px;
+                            height: 18.5px;
+                            display: flex;
+
+                            path {
+                                transition: all 0.3s ease-in-out;
+
+                            }
+                        }
+
+                        &:hover {
+                            svg {
+                                path {
+                                    fill: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mobile-menu-container {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    height: 100dvh;
+    z-index: 5;
+    top: 80px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu-container-content {
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 45px;
+        width: inherit;
+        height: calc(100vh - 80px);
+
+        .top {
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+
+            .h1 {
+                font-weight: 700;
+                font-size: 30px;
+                line-height: 33px;
+                letter-spacing: 0%;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                li {
+                    a {
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 21.97px;
+                        letter-spacing: 0%;
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            .link-text {
+                color: $blue;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 21.97px;
+                letter-spacing: 0%;
+            }
+
+            .social-link {
+                display: flex;
+                gap: 1.5rem;
             }
         }
     }

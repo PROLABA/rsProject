@@ -43,6 +43,7 @@
         font-style: normal;
         font-family: 'Colibri', sans-serif;
         color: $black;
+        scrollbar-gutter: stable;
 
     }
 
@@ -57,11 +58,22 @@
         @media (max-width: 82.5rem) {
             max-width: 740px;
         }
+
+        @media (max-width: 740px) {
+            padding: 0 1rem;
+        }
     }
 
     html {
         overflow-x: clip;
         box-sizing: border-box;
+        scrollbar-gutter: stable;
+        scroll-behavior: smooth;
+        scrollbar-gutter: stable;
+
+        &.hidden {
+            overflow: hidden;
+        }
     }
 
     .main-wrapper {

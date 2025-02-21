@@ -125,3 +125,21 @@ document.addEventListener("DOMContentLoaded", function () {
     swiper.update();
   }
 });
+
+const mobileMenu = () => {
+  const btn = document.querySelector(".header-btn");
+  const menu = document.querySelector(".mobile-menu-container");
+  const html = document.querySelector("html");
+  const rline = document.querySelector(".rigth-line-big");
+  const lline = document.querySelector(".left-line-big");
+  if (!btn || !menu) return;
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    html.classList.toggle("hidden");
+    rline.classList.toggle("hidden");
+    lline.classList.toggle("hidden");
+    btn.classList.toggle("active");
+  });
+};
+mobileMenu();
