@@ -2,7 +2,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import anime from "animejs/lib/anime.es.js";
 import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
+import {Navigation} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -67,38 +67,46 @@ document.querySelectorAll(".faq").forEach((faq) => {
     }
   });
 });
+const swiper = new Swiper(".swiper", {
+  modules: [Navigation],
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  slidesPerView: 3,
+  spaceBetween: 30,
+
+  loop: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 1.3,
+      spaceBetween: 8,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1076: {
+      slidesPerView: 3,
+    }
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const tabs = document.querySelectorAll(".cases-tabs .tabs");
   const swiperWrapper = document.querySelector(".swiper-wrapper");
   const swiperSlides = document.querySelectorAll(".swiper-slide");
-  const swiper = new Swiper(".swiper", {
-    modules: [Navigation],
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    slidesPerView: 3,
-    spaceBetween: 30,
-    loop: true,
-  });
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", function () {
-      // Убираем активный класс у всех табов
       tabs.forEach((t) => t.classList.remove("active"));
-      // Добавляем активный класс к выбранному табу
       this.classList.add("active");
 
-      // Получаем значение фильтра
       const filter = this.getAttribute("data-filter");
 
-      // Скрываем все слайды
       swiperSlides.forEach((slide) => {
         slide.style.display = "none";
       });
 
-      // Показываем только те слайды, которые соответствуют фильтру
       const filteredSlides = Array.from(swiperSlides).filter(
         (slide) => slide.getAttribute("data-filter") === filter
       );
@@ -106,12 +114,10 @@ document.addEventListener("DOMContentLoaded", function () {
         slide.style.display = "block";
       });
 
-      // Обновляем Swiper
       swiper.update();
     });
   });
 
-  // Инициализация: показываем слайды для активного таба по умолчанию
   const activeTab = document.querySelector(".cases-tabs .tabs.active");
   if (activeTab) {
     const filter = activeTab.getAttribute("data-filter");
@@ -125,6 +131,59 @@ document.addEventListener("DOMContentLoaded", function () {
     swiper.update();
   }
 });
+
+
+const selectFilter = () => {
+  const selectContainer = document.querySelector(".cases-tabs-mobile");
+  const header = selectContainer.querySelector(".header-tabs");
+  const headerButton = header.querySelector("button");
+  const headerIcon = header.querySelector(".icon");
+  const bodySelect = selectContainer.querySelector(".body-tabs");
+  const filterButtons = bodySelect.querySelectorAll("button");
+  const slides = document.querySelectorAll(".swiper-slide");
+
+  header.addEventListener("click", () => {
+    bodySelect.classList.toggle("active");
+    headerIcon.classList.toggle("active");
+  });
+
+  const setActiveFilter = (filter) => {
+    const activeButton = Array.from(filterButtons).find(btn => btn.getAttribute("data-filter") === filter);
+
+    if (activeButton) {
+      headerButton.innerHTML = activeButton.innerHTML;
+
+      filterButtons.forEach((button) => button.classList.remove("active"));
+      activeButton.classList.add("active");
+    }
+
+    slides.forEach((slide) => {
+      if (slide.getAttribute("data-filter") === filter || filter === "all") {
+        slide.style.display = "block";
+      } else {
+        slide.style.display = "none";
+      }
+    });
+
+    swiper.update();
+  };
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      const selectedFilter = event.currentTarget.getAttribute("data-filter");
+      setActiveFilter(selectedFilter);
+
+      bodySelect.classList.remove("active");
+      headerIcon.classList.remove("active");
+    });
+  });
+
+  const defaultFilter = filterButtons.length > 0 ? filterButtons[0].getAttribute("data-filter") : "all";
+  setActiveFilter(defaultFilter);
+};
+
+document.addEventListener("DOMContentLoaded", selectFilter);
+
 
 const mobileMenu = () => {
   const btn = document.querySelector(".header-btn");

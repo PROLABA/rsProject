@@ -59,6 +59,8 @@ section.cases
                 .header-tabs
                     button(data-filter=tabs[0].filter)
                         .h5= tabs[0].name
+                    .icon 
+                        include ./selectIcon.svg    
                 .body-tabs
                     each tab in tabs
                         button(data-filter=tab.filter)
