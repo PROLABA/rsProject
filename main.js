@@ -2,7 +2,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import anime from "animejs/lib/anime.es.js";
 import Swiper from "swiper";
-import {Navigation} from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -87,8 +87,8 @@ const swiper = new Swiper(".swiper", {
     },
     1076: {
       slidesPerView: 3,
-    }
-  }
+    },
+  },
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -132,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
 const selectFilter = () => {
   const selectContainer = document.querySelector(".cases-tabs-mobile");
   const header = selectContainer.querySelector(".header-tabs");
@@ -148,7 +147,9 @@ const selectFilter = () => {
   });
 
   const setActiveFilter = (filter) => {
-    const activeButton = Array.from(filterButtons).find(btn => btn.getAttribute("data-filter") === filter);
+    const activeButton = Array.from(filterButtons).find(
+      (btn) => btn.getAttribute("data-filter") === filter
+    );
 
     if (activeButton) {
       headerButton.innerHTML = activeButton.innerHTML;
@@ -178,12 +179,14 @@ const selectFilter = () => {
     });
   });
 
-  const defaultFilter = filterButtons.length > 0 ? filterButtons[0].getAttribute("data-filter") : "all";
+  const defaultFilter =
+    filterButtons.length > 0
+      ? filterButtons[0].getAttribute("data-filter")
+      : "all";
   setActiveFilter(defaultFilter);
 };
 
 document.addEventListener("DOMContentLoaded", selectFilter);
-
 
 const mobileMenu = () => {
   const btn = document.querySelector(".header-btn");
@@ -202,3 +205,128 @@ const mobileMenu = () => {
   });
 };
 mobileMenu();
+
+const orderModal = () => {
+  const btn = document.querySelectorAll(".open-order-btn");
+  const modal = document.querySelector(".popup-form");
+  const overlay = document.querySelector(".overlay ");
+  const closeBtn = document.querySelector(".popup-form-close-btn");
+  const centeredContainer = document.querySelector(".center-container ");
+  const html = document.querySelector("html");
+  btn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+  closeBtn.addEventListener("click", () => {
+    closeModal();
+  });
+  overlay.addEventListener("click", () => {
+    closeModal();
+  });
+  function openModal() {
+    modal.style.display = "flex";
+    overlay.style.display = "block";
+    centeredContainer.style.pointerEvents = "auto";
+    html.style.overflow = "hidden";
+    anime({
+      targets: overlay,
+      opacity: [0, 1],
+      duration: 300,
+      easing: "easeInOutQuad",
+    });
+
+    anime({
+      targets: modal,
+      scale: [0.8, 1],
+      opacity: [0, 1],
+      duration: 400,
+      easing: "easeOutQuad",
+    });
+  }
+  function closeModal() {
+    anime({
+      targets: overlay,
+      opacity: [1, 0],
+      duration: 300,
+      easing: "easeInOutQuad",
+    });
+    anime({
+      targets: modal,
+      scale: [1, 0.8],
+      opacity: [1, 0],
+      duration: 400,
+      easing: "easeInQuad",
+      complete: () => {
+        modal.style.display = "none";
+        overlay.style.display = "none";
+        centeredContainer.style.pointerEvents = "none";
+        html.style.overflow = "auto";
+      },
+    });
+  }
+};
+orderModal();
+const orderProjectModal = () => {
+  const btn = document.querySelectorAll(".open-project-btn");
+  const modal = document.querySelector(".order-project");
+  const overlay = document.querySelector(".overlay ");
+  const closeBtn = document.querySelector(".popup-form-close-btn");
+  const centeredContainer = document.querySelector(".center-container ");
+  const html = document.querySelector("html");
+  btn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+  closeBtn.addEventListener("click", () => {
+    closeModal();
+  });
+  overlay.addEventListener("click", () => {
+    closeModal();
+  });
+  function openModal() {
+    modal.style.display = "flex";
+    overlay.style.display = "block";
+    centeredContainer.style.pointerEvents = "auto";
+    html.style.overflow = "hidden";
+    anime({
+      targets: overlay,
+      opacity: [0, 1],
+      duration: 300,
+      easing: "easeInOutQuad",
+    });
+
+    anime({
+      targets: modal,
+      scale: [0.8, 1],
+      opacity: [0, 1],
+      duration: 400,
+      easing: "easeOutQuad",
+    });
+  }
+  function closeModal() {
+    anime({
+      targets: overlay,
+      opacity: [1, 0],
+      duration: 300,
+      easing: "easeInOutQuad",
+    });
+    anime({
+      targets: modal,
+      scale: [1, 0.8],
+      opacity: [1, 0],
+      duration: 400,
+      easing: "easeInQuad",
+      complete: () => {
+        modal.style.display = "none";
+        overlay.style.display = "none";
+        centeredContainer.style.pointerEvents = "none";
+        html.style.overflow = "auto";
+      },
+    });
+  }
+};
+orderProjectModal();

@@ -1,0 +1,112 @@
+.order-project,
+.popup-form {
+  max-width: 550px;
+  width: 100%;
+  min-height: 463px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  z-index: $zModal;
+  padding: 3.125rem;
+  overflow-y: auto;
+  position: relative;
+  .popup-form-container {
+    width: 100%;
+  }
+  @media (max-width: 82.5rem) {
+    padding: 40px;
+    max-width: 450px;
+    min-height: 456px;
+  }
+  @media (max-width: 740px) {
+    padding: 40px 16px;
+    max-width: 288px;
+    max-height: 379px;
+  }
+  display: none;
+}
+.center-container {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $zCenterContainer;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.1875rem);
+  z-index: $zOverlay;
+  cursor: pointer;
+}
+.popup-form-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  display: flex;
+}
+.form-item {
+  .form-title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @media (max-width: 82.5rem) {
+      gap: 15px;
+      .text-larg {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22.4px;
+        letter-spacing: 0%;
+      }
+    }
+  }
+  .form {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: start;
+    max-width: 308px;
+    .input-container {
+      width: 100%;
+    }
+    .underline {
+      text-decoration: underline;
+    }
+    .bottom-text {
+      margin-top: -5px;
+    }
+    .button {
+      width: 100%;
+    }
+    @media (max-width: 82.5rem) {
+      max-width: 227px;
+      .bottom-text {
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14.65px;
+          letter-spacing: 0%;
+        }
+      }
+    }
+    @media (max-width: 740px) {
+      gap: 8px;
+      max-width: none;
+    }
+  }
+}

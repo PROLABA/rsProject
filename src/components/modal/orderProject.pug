@@ -1,0 +1,22 @@
+.center-container 
+    .order-project
+        .popup-form-container 
+            .popup-form-close-btn
+                include ./closeModal.svg
+            .form-item  
+                .form-title 
+                    .h3 Заказать проект
+                    .text-larg Введите свое имя и  номер телефона,<br>наш менеджер свяжется с Вами в ближайщее время.
+                form(action="#").form 
+                    .input-container 
+                        input(type="text" placeholder="Имя" name="name").input
+                    .input-container 
+                        input(type="text" placeholder="+7 (000) 000 00 00" name="phone").input.phone
+                    .input-container 
+                        input(type="text" placeholder="Напишите объект проектирования" name="name").input    
+                    button.button.button-accent Заказать 
+                    .bottom-text 
+                        p Нажимая на кнопку вы соглашаетесь <br> 
+                            span с  
+                                a.underline(href="http://") Политикой конфиденциальности  
+.overlay
