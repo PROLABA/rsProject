@@ -1,6 +1,7 @@
 .bottom-form {
   padding-top: 200px;
   padding-bottom: 17.4375rem;
+
   @media (max-width: 1320px) {
     padding-top: 150px;
     padding-bottom: 150px;
@@ -16,17 +17,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   @media (max-width: 82.5rem) {
     flex-direction: column-reverse;
     align-items: start;
     gap: 11px;
   }
+
   .rigth-content {
     max-width: 308px;
     width: 100%;
+
     @media (max-width: 82.5rem) {
       max-width: none;
     }
+
     .form-item {
       position: relative;
       z-index: 1;
@@ -56,9 +61,11 @@
 
   .left-content {
     margin-top: -192px;
+
     @media (max-width: 82.5rem) {
       margin-top: 0;
     }
+
     .content {
       display: flex;
       align-items: center;
@@ -67,9 +74,11 @@
       .frame-content {
         position: relative;
         min-width: 322px;
+
         @media (max-width: 82.5rem) {
           min-width: auto;
         }
+
         .frame-context {
           display: flex;
           flex-direction: column;
@@ -79,8 +88,13 @@
           right: -100px;
           top: -25px;
           z-index: 1;
+
           @media (max-width: 82.5rem) {
             position: initial;
+          }
+
+          @media (max-width:740px) {
+            min-width: auto;
           }
         }
 
@@ -106,6 +120,7 @@
 
       img {
         min-width: 600px;
+
         @media (max-width: 82.5rem) {
           min-width: auto;
         }
@@ -116,6 +131,7 @@
 
 .download-dock {
   padding-top: 200px;
+
   @media (max-width: 1320px) {
     padding-top: 150px;
   }
@@ -123,6 +139,7 @@
   @media (max-width: 740px) {
     padding-top: 64px;
   }
+
   .frame-context {
     right: -221px !important;
     top: 0px !important;
