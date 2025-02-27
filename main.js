@@ -348,5 +348,5 @@ window.addEventListener("load", () => {
       document.querySelector(".preloader").style.scale = "1.5";
       html.style.overflow = "auto";
     }
-  }, 30);
+  }, 20);
 });
