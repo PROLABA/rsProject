@@ -330,3 +330,23 @@ const orderProjectModal = () => {
   }
 };
 orderProjectModal();
+
+window.addEventListener("load", () => {
+  const percentLoad = document.querySelector(".percent-load");
+  let count = 0;
+  const html = document.querySelector("html");
+  html.style.overflow = "hidden";
+
+  const interval = setInterval(() => {
+    count++;
+    percentLoad.textContent = count + "%";
+
+    if (count === 100) {
+      clearInterval(interval);
+      document.querySelector(".preloader").style.opacity = "0";
+      document.querySelector(".preloader").style.pointerEvents = "none";
+      document.querySelector(".preloader").style.scale = "1.5";
+      html.style.overflow = "auto";
+    }
+  }, 30);
+});
