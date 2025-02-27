@@ -103,8 +103,10 @@ footer {
     }
   }
   .footer-container-middle-ul-mobile {
+    display: none;
     @media (max-width: 740px) {
       padding-top: 1rem;
+      display: block;
       ul {
         display: flex;
         flex-direction: column;
