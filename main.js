@@ -43,7 +43,7 @@ document.querySelectorAll(".faq").forEach((faq) => {
     body.style.transition = "height 0.4s ease-in-out";
   }
 
-  faq.addEventListener("click", () => {
+  const toggleFAQ = () => {
     if (body.style.height === "0px" || body.style.height === "") {
       body.style.height = body.scrollHeight + 10 + "px";
       body.style.paddingTop = "10px";
@@ -65,7 +65,28 @@ document.querySelectorAll(".faq").forEach((faq) => {
         },
       });
     }
-  });
+  };
+
+  // Handle both hover and click based on screen width
+  const handleInteraction = () => {
+    if (window.innerWidth <= 740) {
+      // Mobile - click only
+      faq.removeEventListener("mouseenter", toggleFAQ);
+      faq.removeEventListener("mouseleave", toggleFAQ);
+      faq.addEventListener("click", toggleFAQ);
+    } else {
+      // Desktop - hover
+      faq.addEventListener("mouseenter", toggleFAQ);
+      faq.addEventListener("mouseleave", toggleFAQ);
+      faq.removeEventListener("click", toggleFAQ);
+    }
+  };
+
+  // Initial setup
+  handleInteraction();
+
+  // Update on window resize
+  window.addEventListener("resize", handleInteraction);
 });
 const swiper = new Swiper(".swiper", {
   modules: [Navigation],

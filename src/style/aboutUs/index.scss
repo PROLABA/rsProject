@@ -1,6 +1,7 @@
 .about-us {
     padding-top: 12.5rem;
-
+    position: relative;
+    z-index:2 ;
     @media (max-width:1320px) {
         padding-top: 9.375rem;
     }
